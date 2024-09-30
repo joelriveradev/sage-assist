@@ -1,0 +1,37 @@
+{
+  "name": "sage-assist",
+  "version": "0.1.0",
+  "description": "Internal package for Gadget app gadget-remix-shop-spa (Development environment)",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production remix vite:build"
+  },
+  "dependencies": {
+    "@gadget-client/sage-assist": "link:.gadget/client",
+    "@gadgetinc/react": "^0.16.7",
+    "@gadgetinc/react-shopify-app-bridge": "^0.16.4",
+    "@remix-run/node": "^2.11.2",
+    "@remix-run/react": "^2.11.2",
+    "@shopify/app-bridge-react": "4.0.0",
+    "@shopify/polaris": "^13.8.0",
+    "@shopify/polaris-icons": "^9.3.0",
+    "gadget-server": "link:.gadget/server",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.15.0",
+    "shopify-api-node": "^3.12.6"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.11.2",
+    "@types/node": "^20.12.8",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "3.7.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.5"
+  }
+}
