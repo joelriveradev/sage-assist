@@ -23,9 +23,9 @@ export function ChatMessage({ className, content, role }: ChatMessageProps) {
           ),
           li: ({ children }) => <li className='mb-5 last:mb-0'>{children}</li>
         }}
-        className={cn({
+        className={cn('last:mb-5', {
           'px-4 text-neutral-700 whitespace-pre-wrap text-lg': isAssistant,
-          'border border-black/40 p-2 px-4 rounded-xl inline-flex text-black/40 my-5 first:mt-0':
+          'border border-black/40 p-2 px-4 rounded-xl inline-flex text-black/40 my-5':
             isHuman
         })}
       >

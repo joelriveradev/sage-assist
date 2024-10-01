@@ -5,6 +5,7 @@ import { cn, generateUniqueId } from '@/lib/utils'
 import { ChatMessage } from '@/components/ai/Message'
 import { Button } from '@/components/ui/button'
 import { ChatInput } from '@/components/ai/Input'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface ChatProps {
   id?: string
@@ -23,21 +24,26 @@ export function Chat({
     })
 
   return (
-    <div className={cn('flex flex-col w-full mx-auto min-h-dvh', className)}>
-      <div className='pb-28'>
+    <div
+      className={cn(
+        'grid grid-cols-1 grid-rows-[1fr_auto] w-full max-w-2xl mx-auto h-[calc(100dvh-1.5rem)] bg-neutral-50 rounded-2xl',
+        className
+      )}
+    >
+      <ScrollArea className='w-full px-4'>
         {messages.map((message) => {
           return <ChatMessage key={message.id} {...message} />
         })}
-      </div>
+      </ScrollArea>
 
       <form onSubmit={handleSubmit}>
-        <div className='fixed bottom-0 w-full md:max-w-4xl flex items-center mb-5 -translate-x-1/2 left-1/2 md:px-7'>
+        <div className='w-full md:max-w-2xl flex items-center mb-6 px-5 md:px-7'>
           <ChatInput input={input} handleInputChange={handleInputChange} />
 
           {isLoading ? (
             <Button
               type='button'
-              className='absolute md:right-14 right-5 rounded-full ml-2 w-7 h-7 p-0 shrink-0 bg-stone-700'
+              className='rounded-full ml-2 w-7 h-7 p-0 shrink-0 bg-stone-700'
               onClick={stop}
             >
               <X size={15} />
@@ -46,7 +52,7 @@ export function Chat({
             <Button
               type='submit'
               className={cn(
-                'absolute md:right-14 right-5 rounded-full ml-2 w-7 h-7 p-0 shrink-0 bg-stone-700 disabled:bg-stone-300'
+                'rounded-full ml-4 w-7 h-7 p-0 shrink-0 bg-stone-700 disabled:bg-stone-300'
               )}
               disabled={!input || isLoading}
             >

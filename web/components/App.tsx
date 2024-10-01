@@ -16,7 +16,7 @@ export function AuthenticatedApp() {
 function Unauthenticated() {
   return (
     <Page title='Unauthorized'>
-      <p className='text-zinc-600'>
+      <p className='text-neutral-600'>
         You must be logged in to Shopify to access this app.
       </p>
     </Page>

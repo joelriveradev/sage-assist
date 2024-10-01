@@ -10,8 +10,7 @@ export function ChatInput({ input, handleInputChange }: ChatInputProps) {
   return (
     <Input
       className={cn(
-        'w-full h-12 px-6 border text-base bg-neutral-50/70 border-neutral-200 backdrop-blur-md rounded-xl placeholder:text-neutral-400 pr-14',
-        'dark:bg-white/5 dark:border-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400',
+        'w-full h-12 px-4 border text-base border-neutral-200 rounded-xl placeholder:text-neutral-400',
         'hover:border-neutral-400'
       )}
       value={input}
