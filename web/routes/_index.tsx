@@ -1,5 +1,5 @@
 import { Page } from '@shopify/polaris'
-import { Chat } from '../components/ai/Chat'
+import { Chat } from '@/components/ai/Chat'
 
 export default function Index() {
   return (

@@ -1,7 +1,7 @@
 import { useGadget } from '@gadgetinc/react-shopify-app-bridge'
 import { Outlet } from '@remix-run/react'
 import { Page } from '@shopify/polaris'
-import { FullPageSpinner } from './FullPageSpinner'
+import { FullPageSpinner } from '@/components/FullPageSpinner'
 
 export function AuthenticatedApp() {
   const { isAuthenticated, loading } = useGadget()

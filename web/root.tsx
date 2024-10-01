@@ -7,13 +7,13 @@ import {
 } from '@gadgetinc/react-shopify-app-bridge'
 
 import { Suspense } from 'react'
-import { api } from './api'
-import { AuthenticatedApp } from './components/App'
-import { FullPageSpinner } from './components/FullPageSpinner'
+import { api } from '@/api'
+import { AuthenticatedApp } from '@/components/App'
+import { FullPageSpinner } from '@/components/FullPageSpinner'
 
 import polarisStyles from '@shopify/polaris/build/esm/styles.css?url'
 import enTranslations from '@shopify/polaris/locales/en.json'
-import globalStyles from './styles/globals.css?url'
+import globalStyles from '@/styles/globals.css?url'
 
 export const links = () => [
   { rel: 'stylesheet', href: globalStyles },

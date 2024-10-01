@@ -1,10 +1,10 @@
 import { useChat } from 'ai/react'
 import { X, ArrowUp } from 'lucide-react'
 import { Message } from 'ai'
-import { cn, generateUniqueId } from '../../lib/utils'
-import { ChatMessage } from './Message'
-import { Button } from '../ui/button'
-import { ChatInput } from './Input'
+import { cn, generateUniqueId } from '@/lib/utils'
+import { ChatMessage } from '@/components/ai/Message'
+import { Button } from '@/components/ui/button'
+import { ChatInput } from '@/components/ai/Input'
 
 interface ChatProps {
   id?: string

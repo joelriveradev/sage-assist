@@ -1,12 +1,13 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "build"],
   "compilerOptions": {
     "baseUrl": ".",
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "ES2022",
     "strict": true,
@@ -14,7 +15,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@/*": ["./web/*"]
+      "@/*": ["web/*"]
     },
     "noEmit": true
   }

@@ -1,5 +1,6 @@
-import { cn } from '../../lib/utils'
 import { Message } from 'ai'
+import { cn } from '@/lib/utils'
+
 import ReactMarkdown from 'react-markdown'
 
 interface ChatMessageProps extends Message {
