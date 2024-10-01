@@ -1,6 +1,5 @@
 import { useGadget } from '@gadgetinc/react-shopify-app-bridge'
-import { Outlet, Link } from '@remix-run/react'
-import { NavMenu } from '@shopify/app-bridge-react'
+import { Outlet } from '@remix-run/react'
 import { Page } from '@shopify/polaris'
 import { FullPageSpinner } from './FullPageSpinner'
 
@@ -25,15 +24,5 @@ function Unauthenticated() {
 }
 
 function EmbeddedApp() {
-  return (
-    <>
-      <NavMenu>
-        <Link to='/' rel='home'>
-          Shop Information
-        </Link>
-        <Link to='/about'>About</Link>
-      </NavMenu>
-      <Outlet />
-    </>
-  )
+  return <Outlet />
 }

@@ -1,23 +1,22 @@
 import { Meta, Links, Scripts, ScrollRestoration } from '@remix-run/react'
 import { AppProvider } from '@shopify/polaris'
-import { Suspense } from 'react'
-import { api } from './api'
-import { AuthenticatedApp } from './components/App'
-import { FullPageSpinner } from './components/FullPageSpinner'
 
 import {
   AppType,
   Provider as GadgetProvider
 } from '@gadgetinc/react-shopify-app-bridge'
 
-import enTranslations from '@shopify/polaris/locales/en.json'
+import { Suspense } from 'react'
+import { api } from './api'
+import { AuthenticatedApp } from './components/App'
+import { FullPageSpinner } from './components/FullPageSpinner'
+
 import polarisStyles from '@shopify/polaris/build/esm/styles.css?url'
-import tailwindStyles from './styles/tailwind.css?url'
-import appStylesHref from './styles/app.css?url'
+import enTranslations from '@shopify/polaris/locales/en.json'
+import globalStyles from './styles/globals.css?url'
 
 export const links = () => [
-  { rel: 'stylesheet', href: tailwindStyles },
-  { rel: 'stylesheet', href: appStylesHref },
+  { rel: 'stylesheet', href: globalStyles },
   {
     rel: 'stylesheet',
     href: polarisStyles
@@ -41,7 +40,11 @@ export const meta = () => [
   }
 ]
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang='en'>
       <head>
@@ -50,7 +53,6 @@ export const Layout = ({ children }) => {
         <script suppressHydrationWarning>/* --GADGET_CONFIG-- */</script>
         <Links />
       </head>
-
       <body>
         <Suspense fallback={<FullPageSpinner />}>{children}</Suspense>
         <ScrollRestoration />
