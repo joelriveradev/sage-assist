@@ -1,14 +1,18 @@
-import { openai } from '@ai-sdk/openai'
 import { ActionFunctionArgs } from '@remix-run/node'
-import { streamText, convertToCoreMessages } from 'ai'
+import { LangChainAdapter } from 'ai'
+import { convertToLangChainMessages } from '@/lib/ai/utils'
+import { QAChain } from '@/lib/ai/chain'
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { messages } = await request.json()
 
-  const result = await streamText({
-    model: openai('gpt-4o-mini'),
-    messages: convertToCoreMessages(messages)
+  const chat_history = convertToLangChainMessages(messages)
+  const query = messages[messages.length - 1].content
+
+  const stream = await QAChain.stream({
+    query,
+    chat_history
   })
 
-  return result.toDataStreamResponse()
+  return LangChainAdapter.toDataStreamResponse(stream)
 }
