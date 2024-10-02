@@ -31,6 +31,20 @@ export function Chat({
       )}
     >
       <ScrollArea className='w-full px-4'>
+        {!messages.length && (
+          <>
+            <section className='p-6 pb-8'>
+              <h1 className='mb-1 text-base font-medium'>
+                Hello there! I'm Sage, your personal AI assistant.
+              </h1>
+
+              <p>
+                I can help you find and create recipes, ask questions, and get
+                recommendations.
+              </p>
+            </section>
+          </>
+        )}
         {messages.map((message) => {
           return <ChatMessage key={message.id} {...message} />
         })}
